@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  copilot-agent:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - VECTOR_DB=${VECTOR_DB}
+    volumes:
+      - ./store:/app/store

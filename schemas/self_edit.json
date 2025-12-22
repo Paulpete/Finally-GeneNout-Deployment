@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SelfEditCandidate",
+  "type": "object",
+  "required": ["id", "created_at", "task", "sft_examples", "plan"],
+  "properties": {
+    "id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "task": { "type": "string" },
+    "plan": { "type": "string" },
+    "sft_examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["input", "output", "source_chunks"],
+        "properties": {
+          "input": { "type": "string" },
+          "output": { "type": "string" },
+          "source_chunks": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "metadata": { "type": "object" },
+    "status": { "type": "string", "enum": ["generated","evaluating","accepted","rejected","human_review"] },
+    "eval": { "type": ["object","null"] }
+  }
+}
