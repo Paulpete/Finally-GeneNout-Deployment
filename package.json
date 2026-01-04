@@ -1,7 +1,7 @@
 {
   "name": "copilot-agent-image-context",
   "version": "0.1.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -14,7 +14,7 @@
     "openai": "^4.8.0",
     "tesseract.js": "^4.0.2",
     "dotenv": "^16.0.0",
-    "node-fetch": "^3.3.2",
+    "node-fetch": "^2.6.7",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
